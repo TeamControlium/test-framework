@@ -1,0 +1,57 @@
+{
+  "name": "@controlium/framework",
+  "version": "0.1.0",
+  "description": "Controlium test framework",
+  "type": "module",
+  "author": "Team Controllium contributors",
+  "contributors": [
+    "Mat Walker <v-mwalk@alexview.com>"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TeamControlium/controlium-framework"
+  },
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist coverage",
+    "build:esm": "tsc -p tsconfig.build.json",
+    "build": "npm run clean && npm run build:esm",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint 'src/**/*.ts' --fix"
+  },
+  "keywords": [
+    "typescript",
+    "controlium",
+    "node",
+    "esm",
+    "test-framework"
+  ],
+  "dependencies": {
+    "@controlium/utils": "^1.0.2-alpha.5",
+    "msw": "2.7.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.58.0",
+    "@typescript-eslint/parser": "^8.58.0",
+    "@vitest/coverage-v8": "^4.1.4",
+    "eslint": "^8.0.0",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
